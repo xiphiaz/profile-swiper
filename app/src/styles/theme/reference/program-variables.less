@@ -1,0 +1,141 @@
+@import (reference) "../../../../bower_components/material-color/material-color.less";
+
+// color palette for IQS program
+
+// #3b3059 purple
+// #a094c1 purple light
+//headerbg #493e66 #3b2f5a
+// #62a94f green  (header top bar) 62a94f
+// #dd503f red (announcement)
+
+//  font-family: "True North Regular", Helvetica, Arial, sans-serif;
+//  font-family: "Big Caslon Medium", "Times New Roman", Georgia, serif;
+//  font-family: "Franklin Gothic Book", Helvetica, Arial, sans-serif;
+//  font-family: "Franklin Gothic Demi", Helvetica, Arial, sans-serif;
+//  font-family: "Lora Regular", "Times New Roman", Georgia, serif;
+@imgpath: '/assets/images';
+
+@font-franklinbook: "Franklin Gothic Book", Helvetica, Arial, sans-serif;
+@font-franklinmedium: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+@font-franklindemi: "Franklin Gothic Demi", Helvetica, Arial, sans-serif;
+@font-lora: "Lora Regular", "Times New Roman", Georgia, serif;
+@font-truenorth: "True North Regular", Helvetica, Arial, sans-serif;
+@font-bigcaslon: "Big Caslon Medium", "Times New Roman", Georgia, serif;
+
+@clr-iqs-purple: #3b3059;
+@clr-iqs-purple-1: #3b2f5a;
+@clr-iqs-purple-2: #493e66;
+@clr-iqs-purple-3: #a094c1;
+@clr-iqs-purple-4: #2d2148;
+@clr-iqs-purple-5: #453b61;
+@clr-iqs-purple-6: #a29db0;
+@clr-iqs-purple-7: #2c2147;
+@clr-iqs-purple-8: #33284d;
+
+@clr-iqs-badge: #ddddc9;
+@clr-iqs-badge-1: #f5f5ee;
+@clr-iqs-badge-2: #fafaf6;
+@clr-iqs-badge-3: #e1e1ce;
+@clr-iqs-badge-4: #ccccb9;
+@clr-iqs-badge-5: #b8b6b2;
+@clr-iqs-badge-6: #f3f3e9;
+
+@clr-iqs-text: #4e493d;
+
+@clr-iqs-brown: #967f60;
+
+@clr-iqs-green: #62a94f;
+@clr-iqs-green-1: #81b674;
+@clr-iqs-green-2: #44972c;
+@clr-iqs-green-3: #4a9a32;
+@clr-iqs-aqua: #3bafab;
+@clr-iqs-aqua-1: #309b93;
+@clr-iqs-aqua-2: #f4faf9;
+@clr-iqs-aqua-3: #71c7c3;
+@clr-iqs-aqua-4: #81cdca;
+@clr-iqs-bluedark: #24193b;
+@clr-iqs-grey: #c7c7be;
+@clr-iqs-voilet: #bb3ab0;
+
+@clr-iqs-red: #dd503f;
+@clr-iqs-red-1: #dd5242;
+@clr-iqs-red-2: #d94747;
+@clr-iqs-red-3: #fe485c;
+@clr-iqs-red-4: #9b160c;
+@clr-iqs-red-5: #be352b;
+
+@clr-iqs-aqua-3: #84cecd;
+
+@clr-iqs-orange: #f08e4b;
+@clr-iqs-orange-1: #f0904e;
+@clr-iqs-orange-2: #f1975a;
+@clr-iqs-blue: #3fb6de;
+@clr-iqs-dark-green: #aeae8e;
+
+
+@cls-iqs-light-red: #e66153;
+
+// customized vars
+@background-50: @clr-grey-50;
+@background-100: @clr-grey-100;
+@background-200: @clr-grey-200;
+@background-300: @clr-grey-300;
+@background-400: @clr-grey-400;
+@background-500: @clr-grey-500;
+@background-600: @clr-grey-600;
+@background-700: @clr-grey-700;
+@background-800: @clr-grey-800;
+@background-900: @clr-grey-900;
+@background-A100: @clr-grey-100; //remove?
+@background-color: white;
+@background-contrast: black;
+
+@primary-50: @clr-deep-purple-50;
+@primary-100: @clr-deep-purple-100;
+@primary-200: @clr-deep-purple-200;
+@primary-300: @clr-deep-purple-300;
+@primary-400: @clr-deep-purple-400;
+@primary-500: @clr-deep-purple-500;
+@primary-600: @clr-deep-purple-600;
+@primary-700: @clr-deep-purple-700;
+@primary-800: @clr-deep-purple-800;
+@primary-900: @clr-deep-purple-900;
+@primary-1000: #000000;
+@primary-A100: @clr-deep-purple-A100;
+@primary-A200: @clr-deep-purple-A200;
+@primary-A400: @clr-deep-purple-A400;
+@primary-A700: @clr-deep-purple-A700;
+@primary-color: @clr-deep-purple;
+@primary-contrast: white;
+
+@warn-100: @clr-red-100;
+@warn-500: @clr-red-500;
+@warn-600: @clr-red-600;
+@warn-700: @clr-red-700;
+@warn-A200: @clr-red-A200;
+@warn-A700: @clr-red-A700;
+@warn-color: @warn-A200;
+@warn-contrast: white;
+
+@accent-50: @clr-pink-50;
+@accent-100: @clr-pink-100;
+@accent-200: @clr-pink-200;
+@accent-300: @clr-pink-300;
+@accent-400: @clr-pink-400;
+@accent-500: @clr-pink-500;
+@accent-600: @clr-pink-600;
+@accent-700: @clr-pink-700;
+@accent-800: @clr-pink-800;
+@accent-900: @clr-pink-900;
+@accent-A100: @clr-pink-A100;
+@accent-A200: @clr-pink-A200;
+@accent-A400: @clr-pink-A400;
+@accent-A700: @clr-pink-A700;
+@accent-color: @accent-A100;
+@accent-contrast: white;
+
+@foreground-1: rgba(0, 0, 0, 0.87);
+@foreground-2: rgba(0, 0, 0, 0.54);
+@foreground-3: rgba(0, 0, 0, 0.26);
+@foreground-4: rgba(0, 0, 0, 0.12);
+@foreground-shadow: '';
