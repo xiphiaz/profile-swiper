@@ -1,5 +1,34 @@
-<h2>Profile Swiper Demo</h2>
+<div layout="column" id="home">
 
-<profile-swiper profiles="HomeController.profiles">
 
-</profile-swiper>
+    <div layout="column" id="profile-list">
+        <md-toolbar class="md-warn">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Profiles</h2>
+            </div>
+        </md-toolbar>
+
+        <md-content flex layout-padding>
+            <div ng-repeat="profile in HomeController.profiles | orderBy:'-'" class="profile-status">
+                <md-icon class="approved" ng-if="profile.approved === true">thumb_up</md-icon>
+                <md-icon class="rejected" ng-if="profile.approved === false">thumb_down</md-icon>
+                <md-icon class="pending" ng-if="profile.approved === null">hourglass_empty</md-icon>
+                <img class="md-card-image" ng-src="{{profile.avatar}}" alt="profile.fullName">
+            </div>
+
+        </md-content>
+    </div>
+
+    <div layout="column">
+        <md-toolbar class="md-warn">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Swiper Demo</h2>
+            </div>
+        </md-toolbar>
+
+        <profile-swiper profiles="HomeController.profiles"></profile-swiper>
+    </div>
+
+
+
+</div>

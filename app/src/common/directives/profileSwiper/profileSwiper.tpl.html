@@ -1,27 +1,33 @@
 <div class="profile-swiper">
 
-    <md-card
-            ng-repeat="user in ProfileSwiperController.profiles | filter: ProfileSwiperController.pendingReview"
-            ng-swipe-right="ProfileSwiperController.approve(user)"
-            ng-swipe-left="ProfileSwiperController.reject(user)"
-    >
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">{{::user.fullName}}</span>
-                <span class="md-subhead">{{::user.bio}}</span>
-            </md-card-title-text>
-            <md-card-title-media>
-                <div class="md-media-lg card-media">
-                    <img ng-src="{{user.avatar}}" alt="user.fullName">
-                </div>
-            </md-card-title-media>
-        </md-card-title>
+    <div class="card-wrap">
 
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary" ng-click="ProfileSwiperController.approve(user)">Approve</md-button>
-            <md-button class="md-raised md-warn" ng-click="ProfileSwiperController.reject(user)">Reject</md-button>
-        </md-card-actions>
-    </md-card>
+
+        <md-card
+                ng-repeat="profile in filteredProfiles = (ProfileSwiperController.profiles | filter: ProfileSwiperController.pendingReview)"
+                ng-swipe-right="ProfileSwiperController.approve(profile)"
+                ng-swipe-left="ProfileSwiperController.reject(profile)"
+        >
+            <img class="md-card-image" ng-src="{{profile.avatar}}" alt="profile.fullName">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{::profile.fullName}}</span>
+                    <span class="md-subhead">{{::profile.bio}}</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised md-primary" ng-click="ProfileSwiperController.approve(profile)">Approve</md-button>
+                <md-button class="md-raised md-warn" ng-click="ProfileSwiperController.reject(profile)">Reject</md-button>
+            </md-card-actions>
+        </md-card>
+
+
+    </div>
+
+    <div ng-if="!filteredProfiles.length">
+        All Done! All profiles have been reviewed
+    </div>
 
 </div>
 
