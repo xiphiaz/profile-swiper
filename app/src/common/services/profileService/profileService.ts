@@ -21,6 +21,11 @@ namespace common.services.profile {
             return this.$q.when(this.allProfiles); //@todo hook up to backend
         }
 
+        /**
+         * Save profile models
+         * @param profiles
+         * @returns {IPromise<boolean>}
+         */
         public saveProfiles(profiles:common.models.User[]):ng.IPromise<boolean> {
 
             return this.$q.when(profiles) //@todo save profiles to backend

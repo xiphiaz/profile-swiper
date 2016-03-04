@@ -1,4 +1,22 @@
 <div class="profile-swiper">
-    @todo profile swiper
+
+    <md-card ng-repeat="user in ProfileSwiperController.profiles">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{::user.fullName}}</span>
+                <span class="md-subhead">{{::user.bio}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media">
+                    <img ng-src="{{user.avatar}}" alt="user.fullName">
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="ProfileSwiperController.accept(user)">Accept</md-button>
+            <md-button class="md-raised md-warn" ng-click="ProfileSwiperController.reject(user)">Reject</md-button>
+        </md-card-actions>
+    </md-card>
+
 </div>
 

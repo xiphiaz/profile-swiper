@@ -2,25 +2,31 @@ namespace common.directives.profileSwiper {
 
     export const namespace = 'common.directives.profileSwiper';
 
+    export interface IProfileSwiperScope extends ng.IScope{
+        profiles:common.models.User[];
+    }
 
     export class ProfileSwiperController {
+
+        public profiles:common.models.User[];
 
         static $inject = ['profileService'];
 
         constructor(private profileService:common.services.profile.ProfileService) {
-
+            console.log('directive:', this.profiles);
         }
-
 
     }
 
     class ProfileSwiperDirective implements ng.IDirective {
 
         public restrict = 'E';
-        public require = ['ngModel', 'profileSwiper'];
+        public require = ['profileSwiper'];
         public templateUrl = 'templates/common/directives/profileSwiper/profileSwiper.tpl.html';
         public replace = false;
-        public scope = {};
+        public scope = {
+            profiles: '=',
+        };
 
         public controllerAs = 'ProfileSwiperController';
         public controller = ProfileSwiperController;
@@ -29,10 +35,9 @@ namespace common.directives.profileSwiper {
         constructor() {
         }
 
-        public link = ($scope:ng.IScope, $element:ng.IAugmentedJQuery, $attrs:ng.IAttributes, $controllers:[ng.INgModelController, ProfileSwiperController]) => {
+        public link = ($scope:IProfileSwiperScope, $element:ng.IAugmentedJQuery, $attrs:ng.IAttributes, $controllers:[ProfileSwiperController]) => {
 
-            let $ngModelController = $controllers[0];
-            let directiveController = $controllers[1];
+            let directiveController = $controllers[0];
 
         };
 

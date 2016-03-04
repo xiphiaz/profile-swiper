@@ -15,6 +15,8 @@ namespace common.models {
                 email: seededChance.email(),
                 firstName: seededChance.first(),
                 lastName: seededChance.last(),
+                avatar: `http://lorempixel.com/200/200/people/${chance.integer({min: 1, max: 10}) }`,
+                bio: chance.paragraph({sentences: 2}),
             };
 
         }

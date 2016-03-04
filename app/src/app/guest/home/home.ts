@@ -13,6 +13,7 @@ namespace app.guest.home {
                 views: {
                     "main@app.guest": {
                         controller: namespace + '.controller',
+                        controllerAs: 'HomeController',
                         templateUrl: 'templates/app/guest/home/home.tpl.html'
                     }
                 },
@@ -40,7 +41,6 @@ namespace app.guest.home {
         static $inject = ['profiles'];
 
         constructor(public profiles:common.models.User[]) {
-            console.log(profiles);
         }
 
     }
