@@ -11,6 +11,7 @@ namespace config.vendorModules {
         'ui.inflector', //Module to Humanise strings (camelCased or pipe-case etc)
         'ngAnimate', //angular animate
         'ngSanitize', //angular sanitise
+        'ngTouch', //angular touch - https://docs.angularjs.org/api/ngTouch
     ]);
 
 }

@@ -1,6 +1,10 @@
 <div class="profile-swiper">
 
-    <md-card ng-repeat="user in ProfileSwiperController.profiles | filter: ProfileSwiperController.pendingReview">
+    <md-card
+            ng-repeat="user in ProfileSwiperController.profiles | filter: ProfileSwiperController.pendingReview"
+            ng-swipe-right="ProfileSwiperController.approve(user)"
+            ng-swipe-left="ProfileSwiperController.reject(user)"
+    >
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{::user.fullName}}</span>
@@ -18,10 +22,6 @@
             <md-button class="md-raised md-warn" ng-click="ProfileSwiperController.reject(user)">Reject</md-button>
         </md-card-actions>
     </md-card>
-
-
-    <md-button ng-click="ProfileSwiperController.accept(user)">Accept md button</md-button>
-
 
 </div>
 
