@@ -13,7 +13,14 @@ namespace common.directives.profileSwiper {
         static $inject = ['profileService'];
 
         constructor(private profileService:common.services.profile.ProfileService) {
-            console.log('directive:', this.profiles);
+        }
+
+        public approve(profile:common.models.User):void {
+            profile.approved = true;
+        }
+
+        public reject(profile:common.models.User):void {
+            profile.approved = false;
         }
 
     }
@@ -23,7 +30,7 @@ namespace common.directives.profileSwiper {
         public restrict = 'E';
         public require = ['profileSwiper'];
         public templateUrl = 'templates/common/directives/profileSwiper/profileSwiper.tpl.html';
-        public replace = false;
+        public replace = true;
         public scope = {
             profiles: '=',
         };

@@ -18,6 +18,7 @@ namespace common.models {
         public lastName:string;
         public avatar:string;
         public bio:string;
+        public approved:boolean;
 
 
         /**

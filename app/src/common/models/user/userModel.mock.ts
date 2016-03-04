@@ -17,6 +17,7 @@ namespace common.models {
                 lastName: seededChance.last(),
                 avatar: `http://lorempixel.com/200/200/people/${chance.integer({min: 1, max: 10}) }`,
                 bio: chance.paragraph({sentences: 2}),
+                approved: chance.bool() ? chance.bool() : null,
             };
 
         }
