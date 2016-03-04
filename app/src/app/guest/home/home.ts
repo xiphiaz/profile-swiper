@@ -17,7 +17,9 @@ namespace app.guest.home {
                     }
                 },
                 resolve: /*@ngInject*/{
-
+                    profiles: (profileService:common.services.profile.ProfileService):ng.IPromise<common.models.User[]> => {
+                        return profileService.getProfiles();
+                    },
                 },
                 data: {
                     title: "Home",
@@ -35,10 +37,10 @@ namespace app.guest.home {
 
     class HomeController {
 
-        static $inject = [];
+        static $inject = ['profiles'];
 
-        constructor() {
-
+        constructor(public profiles:common.models.User[]) {
+            console.log(profiles);
         }
 
     }
