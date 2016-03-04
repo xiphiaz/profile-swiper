@@ -56,8 +56,6 @@ namespace common.directives.profileSwiper {
 
             let reviewedProfiles = _.filter(directiveController.profiles, (profile:common.models.User) => _.isBoolean(profile.approved));
 
-            console.log(_.pluck(directiveController.profiles, 'approved'));
-
             expect(reviewedProfiles).to.be.empty;
         });
 
