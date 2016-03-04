@@ -91,6 +91,18 @@ namespace common.directives.profileSwiper {
 
         });
 
+        it('should be able to filter out reviewed profiles', () => {
+
+            let approvedUser = common.models.UserMock.entity({approved:true});
+            let rejectedUser = common.models.UserMock.entity({approved:false});
+            let pendingUser = common.models.UserMock.entity({approved:null});
+
+            expect(directiveController.pendingReview(approvedUser)).to.be.false;
+            expect(directiveController.pendingReview(rejectedUser)).to.be.false;
+            expect(directiveController.pendingReview(pendingUser)).to.be.true;
+
+        });
+
 
     });
 

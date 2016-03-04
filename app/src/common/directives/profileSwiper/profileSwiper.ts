@@ -23,6 +23,11 @@ namespace common.directives.profileSwiper {
             profile.approved = false;
         }
 
+        public pendingReview(profile:common.models.User):boolean {
+
+            return !_.isBoolean(profile.approved);
+        }
+
     }
 
     class ProfileSwiperDirective implements ng.IDirective {

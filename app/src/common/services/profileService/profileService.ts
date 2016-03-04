@@ -9,7 +9,7 @@ namespace common.services.profile {
         static $inject:string[] = ['$q'];
         constructor(private $q:ng.IQService) {
             this.allProfiles = common.models.UserMock.collection(15, {
-                approved: false,
+                approved: null,
             });
         }
 
